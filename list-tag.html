@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Create Elements</title>
+        
+        <!--script-->
+        <script>
+                document.addEventListener('DOMContentLoaded',function(){
+                        
+                        const list = document.querySelectorAll('li')
+                        //by default the button is disable
+                        document.querySelector('#submit').disabled = true
+                        
+                        document.querySelector('#task').onkeyup = () => {
+                                if (document.querySelector('#task').value.length > 0){
+                                document.querySelector('#submit').disabled = false
+                                }else{
+                                        document.querySelector('#submit').disabled = true
+                                }
+                        }
+                        
+                        let i=0
+                        const form = document.querySelector('form')
+                        form.onsubmit = () =>{
+                           const input = document.querySelector('#task').value 
+                      i++     
+                          
+                           
+                   
+                    const li = document.createElement('li')
+                    li.innerHTML = `${input} ID: ${i}`
+            
+                    
+                    document.querySelector('#list').append(li)
+                    
+                    
+                    
+                    document.querySelector('#task').value = ""
+                   return false
+                        }
+                        
+                })
+        </script>
+</head>
+
+<body>
+        <h1>Task</h1>
+        <ul id="list">
+                
+        </ul>
+        <form action="">
+                <input type="text" name="" id="task">
+                <input id="submit" type="submit" value="Submit">
+        </form>
+</body>
+
+</html>

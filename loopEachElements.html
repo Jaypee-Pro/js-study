@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Loop Elements</title>
+        
+        <script type="text/javascript" charset="utf-8">
+                document.addEventListener('DOMContentLoaded',function(){
+                        let i=1
+                        const div = document.querySelectorAll('div')
+                     const li = document.querySelectorAll('li')
+                        const divStyle = "color:red; border:1px dashed grey; width:80%; margin:1em auto; height:10em;text-align:center "
+                        
+                        const liStyle = "list-style-type: none; font-size:12pt"
+                        
+                        div.forEach(function(elements){
+                                elements.style = divStyle
+                          
+                        })
+                       li.forEach(function(e) {
+                               e.style.color = e.dataset.color
+                               
+                               e.innerText = `Appended : ${i++}`
+                               //e.style = liStyle
+                               
+                       }) 
+                })
+        </script>
+</head>
+
+<body>
+        <div>
+                <ul id="">
+                        <li data-color='blue'>a</li>
+                        <li data-color='red'>b</li>
+                        <li data-color='green'>c</li>
+                </ul>
+        </div>
+        <div>
+                <ul id="">
+                     <li data-color='blue'>a</li>
+                      <li data-color='red'>b</li>
+                      <li data-color='green'>c</li>
+                </ul>
+        </div>
+        <div>
+                <ul>
+                       <li data-color='blue'>a</li>
+                       <li data-color='red'>b</li>
+                       <li data-color='green'>c</li>  
+                </ul>
+        </div>
+</body>
+
+</html>

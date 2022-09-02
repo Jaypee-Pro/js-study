@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Counter with localStorage</title>
+        <script>
+               // let count = 0
+               
+               //localstorage
+               if(!localStorage.getItem('count')){
+                      localStorage.setItem('count',0) 
+               }
+                function counter(){
+                       let count = localStorage.getItem('count')
+                        count++
+                      document.querySelector('#counter').innerHTML=count  
+                      localStorage.setItem('count',count)
+                }
+                document.addEventListener('DOMContentLoaded',function(){
+                        document.querySelector('#counter').innerHTML = localStorage.getItem('count')
+                        document.querySelector('button').onclick = counter
+                     setInterval(counter,1000)
+                })
+               
+                
+                
+        </script>
+</head>
+
+<body>
+        <h1>Counter++</h1>
+        <h1 id="counter">0</h1>
+        <button type="submit">Increment</button>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        
+        
+        <title>DataSet Property</title>
+        
+        <!---js--->
+        <script>
+                
+                //set a function to a documment to load its content 1st
+                document.addEventListener("DOMContentLoaded",function(){
+                        //return all button in array format
+                        const btn = document.querySelectorAll('button')
+                   //loop each button and run a anonymous function
+                   btn.forEach(function(button){
+                           
+                           //add event to each button
+                           button.onclick = function(){
+                       //add a style and set color base on dataset
+                     document.querySelector('#hello').style.color = button.dataset.color
+                     console.log(button.innerHTML)
+                           }
+                   })
+                        
+                })
+                
+        </script>
+</head>
+<body>
+        <h1 id="hello">hello world</h1>
+     
+        <button data-color="red">Red</button>
+        <button data-color="blue">Blue</button>
+        <button data-color="green">Green</button>
+</body>
+</html>
